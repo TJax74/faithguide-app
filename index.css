@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Cream Background */
+    --background: 30 25% 95%;
+    /* Dark Gray Foreground */
+    --foreground: 0 0% 17%;
+
+    /* Gold/Tan Primary */
+    --primary: 43 48% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Gold Accent (same as primary for FaithGuide) */
+    --accent: 43 48% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Dark Navy Secondary */
+    --secondary: 210 38% 16%;
+    --secondary-foreground: 30 25% 95%;
+
+    /* White Cards */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 17%;
+
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 17%;
+
+    /* Light Gray Muted */
+    --muted: 220 9% 46%;
+    --muted-foreground: 220 9% 46%;
+
+    /* Light Border */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 43 48% 58%;
+
+    /* Destructive */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Radius */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Deep Charcoal Background */
+    --background: 0 0% 10%;
+    --foreground: 30 25% 95%;
+
+    /* Gold Primary (slightly muted for dark mode) */
+    --primary: 43 45% 55%;
+    --primary-foreground: 0 0% 10%;
+
+    /* Gold Accent */
+    --accent: 43 45% 55%;
+    --accent-foreground: 0 0% 10%;
+
+    /* Dark Navy Secondary */
+    --secondary: 210 35% 20%;
+    --secondary-foreground: 30 25% 95%;
+
+    /* Dark Cards */
+    --card: 0 0% 14%;
+    --card-foreground: 30 25% 95%;
+
+    --popover: 0 0% 14%;
+    --popover-foreground: 30 25% 95%;
+
+    --muted: 220 9% 40%;
+    --muted-foreground: 220 9% 60%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 43 45% 55%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Outfit', system-ui, sans-serif;
+    line-height: 1.7;
+    overflow-x: clip;
+  }
+  h1, h2, h3, h4, h5, h6, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+    text-wrap: balance;
+    line-height: 1.3;
+  }
+  
+  /* Devotional Reading Typography */
+  .reading-content p {
+    @apply mb-6 text-lg leading-relaxed max-w-[65ch] mx-auto;
+  }
+  .reading-content h2, .reading-content h3 {
+    @apply mt-10 mb-4 font-serif text-2xl text-primary;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent) / 0.8);
+}
